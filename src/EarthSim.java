@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import  java.util.ArrayList;
 import java.util.Collections;
 
@@ -96,14 +95,24 @@ public class EarthSim {
         }
         System.out.printf("%nTime to re-enter = %,.2f seconds %n", Collections.max(time));
         System.out.printf("Total downrange = %,.2f meters %n", Collections.max(down));
+
         int type = 0;
-        Plotter.Plot(down,alt, type);
+        Threader Plot0 = new Threader(down,alt,type);
+        Thread PlotThread0 = new Thread(Plot0);
         type = 1;
-        Plotter.Plot(time,vel,type);
+        Threader Plot1 = new Threader(time,vel,type);
+        Thread PlotThread1 = new Thread(Plot1);
         type = 2;
-        Plotter.Plot(time,accel,type);
+        Threader Plot2 = new Threader(time,accel,type);
+        Thread PlotThread2 = new Thread(Plot2);
         type = 3;
-        Plotter.Plot(time,AoA,type);
+        Threader Plot3 = new Threader(time,AoA,type);
+        Thread PlotThread3 = new Thread(Plot3);
+
+        PlotThread0.start();
+        PlotThread1.start();
+        PlotThread2.start();
+        PlotThread3.start();
     }
 
 }
