@@ -94,7 +94,8 @@ public class EarthSim {
             down.add(curr_range);
 
         }
-        System.out.printf("%n Time to re-enter = %,.2f seconds %n", Collections.max(time));
+        System.out.printf("%nTime to re-enter = %,.2f seconds %n", Collections.max(time));
+        System.out.printf("Total downrange = %,.2f meters %n", Collections.max(down));
     }
 
 }
