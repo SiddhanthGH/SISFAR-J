@@ -1,17 +1,28 @@
 import  java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class EarthSim {
 
     public static void main(String[] args) {
 
-        double mass = 100;
-        double drag_co = 2.2;
-        double surface_area = 6.28*2;
-        double lift_co = 0.55;
-        double initial_alt = 100000;
-        double initial_vel = 7700;
-        double initial_angle = 0.393;
+        Scanner Input = new Scanner(System.in);
+
+        System.out.println("Mass (kg): ");
+        double mass = Input.nextDouble(); //100
+        System.out.println("Drag Coefficient: ");
+        double drag_co = Input.nextDouble(); //2.2
+        System.out.println("Body Radius (m): ");
+        double radius = Input.nextDouble(); //2
+        double surface_area = 3.14159265359*Math.pow(radius,2);
+        System.out.println("Lift Coefficient: ");
+        double lift_co = Input.nextDouble(); //0.55
+        System.out.println("Initial Altitude (m): ");
+        double initial_alt = Input.nextDouble(); //100000
+        System.out.println("Initial Velocity (ms^-1): ");
+        double initial_vel = Input.nextDouble(); //7700
+        System.out.println("Initial Angle (rad): ");
+        double initial_angle = Input.nextDouble(); //0.393
 
         double g = 9.81;
         double weight = mass * g;
@@ -113,6 +124,12 @@ public class EarthSim {
         PlotThread1.start();
         PlotThread2.start();
         PlotThread3.start();
+
+        System.out.println("Press 1 and Enter to exit.");
+        float exit = Input.nextFloat();
+        if (exit == 1){
+            System.exit(0);
+        }
     }
 
 }
