@@ -96,6 +96,14 @@ public class EarthSim {
         }
         System.out.printf("%nTime to re-enter = %,.2f seconds %n", Collections.max(time));
         System.out.printf("Total downrange = %,.2f meters %n", Collections.max(down));
+        int type = 0;
+        Plotter.Plot(down,alt, type);
+        type = 1;
+        Plotter.Plot(time,vel,type);
+        type = 2;
+        Plotter.Plot(time,accel,type);
+        type = 3;
+        Plotter.Plot(time,AoA,type);
     }
 
 }
