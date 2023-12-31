@@ -1,9 +1,12 @@
 import  java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class EarthSim {
 
     public static void main(String[] args) {
+
+        Scanner Input = new Scanner(System.in);
 
         double mass = 100;
         double drag_co = 2.2;
@@ -113,6 +116,13 @@ public class EarthSim {
         PlotThread1.start();
         PlotThread2.start();
         PlotThread3.start();
+
+        System.out.println("Press 1 and Enter to exit.");
+        float exit = Input.nextFloat();
+        if (exit == 1){
+            System.exit(0);
+        }
+
     }
 
 }
