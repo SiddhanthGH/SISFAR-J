@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI {
 
@@ -158,9 +160,34 @@ public class GUI {
 
         JButton run = new JButton();
         run.setText("Simulate");
-        run.setFont(new Font("Copperplate Gothic", Font.ITALIC + Font.BOLD,10));
+        run.setFont(new Font("Copperplate Gothic", Font.ITALIC + Font.BOLD,12));
         run.setVerticalAlignment(JButton.CENTER);
         run.setHorizontalAlignment(JButton.CENTER);
+        run.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                double mass = Double.parseDouble(m.getText());
+                double drag_co = Double.parseDouble(b.getText());
+                double lift_co = Double.parseDouble(l.getText());
+                double radius = Double.parseDouble(r.getText());
+                double initial_alt = Double.parseDouble(alt.getText());
+                double initial_vel = Double.parseDouble(vel.getText());
+                double initial_angle = Double.parseDouble(AoA.getText());
+
+                double[] params = new double[7];
+                params[0] = mass;
+                params[1] = drag_co;
+                params[2] = lift_co;
+                params[3] = radius;
+                params[4] = initial_alt;
+                params[5] = initial_vel;
+                params[6] = initial_angle;
+
+                EarthSim.run(params);
+
+            }
+        });
 
         JPanel panel7 = new JPanel();
         panel7.setLayout(new BoxLayout(panel7,BoxLayout.LINE_AXIS));
@@ -199,25 +226,6 @@ public class GUI {
         frame.add(Box.createRigidArea(new Dimension(0,15)));
 
         frame.setVisible(true);
-
-        double mass = 100;
-        double drag_co = 2.2;
-        double lift_co = 0.55;
-        double radius = 2;
-        double initial_alt = 100000;
-        double initial_vel = 7700;
-        double initial_angle = 0.393;
-
-        double[] params = new double[7];
-        params[0] = mass;
-        params[1] = drag_co;
-        params[2] = lift_co;
-        params[3] = radius;
-        params[4] = initial_alt;
-        params[5] = initial_vel;
-        params[6] = initial_angle;
-
-        //EarthSim.run(params);
 
     }
 

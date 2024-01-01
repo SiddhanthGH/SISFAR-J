@@ -97,8 +97,8 @@ public class EarthSim {
             down.add(curr_range);
 
         }
-        System.out.printf("%nTime to re-enter = %,.2f seconds %n", Collections.max(time));
-        System.out.printf("Total downrange = %,.2f meters %n", Collections.max(down));
+        //System.out.printf("%nTime to re-enter = %,.2f seconds %n", Collections.max(time));
+        //System.out.printf("Total downrange = %,.2f meters %n", Collections.max(down));
 
         int type = 0;
         Threader Plot0 = new Threader(down,alt,type);
@@ -117,11 +117,6 @@ public class EarthSim {
         PlotThread1.start();
         PlotThread2.start();
         PlotThread3.start();
-
-        System.out.println("Press Enter to exit.");
-        Input.nextLine();
-        System.exit(0);
-
     }
 
 }
