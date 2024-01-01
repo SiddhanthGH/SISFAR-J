@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class EarthSim {
 
-    public static void main(String[] args) {
+    public static void run(double[] params) {
 
         Scanner Input = new Scanner(System.in);
 
-        double mass = 100;
-        double drag_co = 2.2;
-        double surface_area = 6.28*2;
-        double lift_co = 0.55;
-        double initial_alt = 100000;
-        double initial_vel = 7700;
-        double initial_angle = 0.393;
+        double mass = params[0];
+        double drag_co = params[1];
+        double radius = params[3];
+        double surface_area = 6.28*radius;
+        double lift_co = params[2];
+        double initial_alt = params[4];
+        double initial_vel = params[5];
+        double initial_angle = params[6];
 
         double g = 9.81;
         double weight = mass * g;

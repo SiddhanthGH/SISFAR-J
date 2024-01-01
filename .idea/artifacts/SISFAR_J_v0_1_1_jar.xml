@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SISFAR-J v0.1.1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SISFAR_J_v0_1_1_jar</output-path>
+    <root id="archive" name="SISFAR.jar">
+      <element id="module-output" name="SISFAR" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/yannrichet/JMathPlot/1.0.1/JMathPlot-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/yannrichet/JMathIO/1.0/JMathIO-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/yannrichet/JMathArray/1.0/JMathArray-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/gov/nist/math/jama/1.0.3/jama-1.0.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
