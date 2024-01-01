@@ -125,11 +125,11 @@ public class EarthSim {
         PlotThread2.start();
         PlotThread3.start();
 
-        System.out.println("Press 1 and Enter to exit.");
-        float exit = Input.nextFloat();
-        if (exit == 1){
-            System.exit(0);
-        }
+        System.out.println("Press Enter to exit.");
+        Input.nextLine();
+        Input.nextLine();
+        System.exit(0);
+
     }
 
 }
