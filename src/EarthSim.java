@@ -23,31 +23,31 @@ public class EarthSim {
         double dt = 0.01;
         double t = 0;
 
-        ArrayList<Double> time = new ArrayList<Double>();
+        ArrayList<Double> time = new ArrayList<>();
         time.add(0.0);
 
-        ArrayList<Double> down = new ArrayList<Double>();
+        ArrayList<Double> down = new ArrayList<>();
         down.add(0.0);
 
-        ArrayList<Double> alt = new ArrayList<Double>();
+        ArrayList<Double> alt = new ArrayList<>();
         alt.add(initial_alt);
 
-        ArrayList<Double> vel = new ArrayList<Double>();
+        ArrayList<Double> vel = new ArrayList<>();
         vel.add(initial_vel);
 
-        ArrayList<Double> accel = new ArrayList<Double>();
+        ArrayList<Double> accel = new ArrayList<>();
         accel.add(0.0);
 
-        ArrayList<Double> AoA = new ArrayList<Double>();
+        ArrayList<Double> AoA = new ArrayList<>();
         AoA.add(initial_angle);
 
         double curr_alt = initial_alt;
         double curr_vel = initial_vel;
         double curr_angle = initial_angle;
         double curr_range = 0.0;
-        double curr_accel = 0.0;
-        double P = 0;
-        double T = 0;
+        double curr_accel;
+        double P;
+        double T;
 
         while (curr_alt >= 0){
 
@@ -59,11 +59,11 @@ public class EarthSim {
             if (curr_alt>=25000){
                 T = -131.21 + (0.00299*curr_alt);
                 P = 2.488 * Math.pow(((T+273.1)/216.6), (-11.388));
-            } else if (curr_alt < 25000) {
+            } else {
                 if (curr_alt >= 11000){
                     T = -56.46;
                     P = 22.65 * (Math.exp(1.73-(0.000157*curr_alt)));
-                } else if (curr_alt < 11000) {
+                } else {
                     T = 15.04 - (0.00649*curr_alt);
                     P = 101.29 * Math.pow(((T+273.1)/288.08), 5.256);
                 }
